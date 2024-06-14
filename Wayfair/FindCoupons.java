@@ -133,7 +133,7 @@ class CouponService {
 } 
 
 // invoker
-class CouponsV2 {
+class FindCoupons {
     public static void main(String[] args) {
         List<List<String>> coups = Arrays.asList(
             Arrays.asList("Comforter Sets", "Comforters Sale", "2020-01-01","10%"),
