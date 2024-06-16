@@ -88,8 +88,8 @@ class EarliestAncestor {
         System.out.println("Node: 9, Ancestor: "+sc.findAncestor(9)); // -> 4
         System.out.println("Node: 5, Ancestor: "+sc.findAncestor(5)); // -> 4
         System.out.println("Node: 2, Ancestor: "+sc.findAncestor(2)); // -> 10
-        System.out.println("Node: 1, Ancestor: "+sc.findAncestor(1)); // -> null
-        System.out.println("Node: 4, Ancestor: "+sc.findAncestor(4)); // -> null
-        System.out.println("Node: 10, Ancestor: "+sc.findAncestor(10)); // -> null
+        System.out.println("Node: 1, Ancestor: "+sc.findAncestor(1)); // -> -1
+        System.out.println("Node: 4, Ancestor: "+sc.findAncestor(4)); // -> -1
+        System.out.println("Node: 10, Ancestor: "+sc.findAncestor(10)); // -> -1
     }
 }
