@@ -21,6 +21,7 @@ class Solution {
     }
 
     Map<Integer, List<Node>> map;
+    Map<Integer, List<Node>> map2;
     
     public void helper(int node, int level, List<Node> nodes) {
         if(map.get(node).size()<1) return;
@@ -32,6 +33,7 @@ class Solution {
 
     public Solution(List<List<Integer>> input, int range) {
         map = new HashMap<Integer, List<Node>>();
+        map2 = new HashMap<Integer, List<Node>>();
         for(int i=1; i<=range; i++) {
             map.put(i, new ArrayList<Node>());
         }
@@ -52,12 +54,14 @@ class Solution {
                     return n2.getLevel()-n1.getLevel();
                 }
             });
-            map.put(i, temp);
+            map2.put(i, temp);
         }
     }
 
     public int findAncestor(int node) {
-        return map.get(node).get(0).getPar();
+        List<Node> temp = map2.get(node);
+        if(temp==null || temp.size()<1 || temp.get(0)==null) return -1;
+        return temp.get(0).getPar();
     }
 }
 
@@ -80,5 +84,12 @@ class EarliestAncestor {
         System.out.println("Node: 8, Ancestor: "+sc.findAncestor(8)); // -> 4
         System.out.println("Node: 7, Ancestor: "+sc.findAncestor(7)); // -> 4
         System.out.println("Node: 6, Ancestor: "+sc.findAncestor(6)); // -> 10
+        System.out.println("Node: 3, Ancestor: "+sc.findAncestor(3)); // -> 10
+        System.out.println("Node: 9, Ancestor: "+sc.findAncestor(9)); // -> 4
+        System.out.println("Node: 5, Ancestor: "+sc.findAncestor(5)); // -> 4
+        System.out.println("Node: 2, Ancestor: "+sc.findAncestor(2)); // -> 10
+        System.out.println("Node: 1, Ancestor: "+sc.findAncestor(1)); // -> null
+        System.out.println("Node: 4, Ancestor: "+sc.findAncestor(4)); // -> null
+        System.out.println("Node: 10, Ancestor: "+sc.findAncestor(10)); // -> null
     }
 }
